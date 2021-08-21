@@ -1,0 +1,29 @@
+fragment LaunchRocket on Launch {
+  rocket {
+    rocket_name
+    rocket_type
+    ...LaunchRocketFirstStage
+    ...LaunchRocketSecondStage
+  }
+}
+
+fragment LaunchRocketFirstStage on LaunchRocket {
+  first_stage {
+    cores {
+      flight
+      core {
+        reuse_count
+        status
+      }
+    }
+  }
+}
+
+fragment LaunchRocketSecondStage on LaunchRocket {
+  second_stage {
+    payloads {
+      payload_type
+      payload_mass_kg
+    }
+  }
+}

@@ -1,0 +1,28 @@
+query PastLaunches(
+  $find: LaunchFind
+  $limit: Int
+  $offset: Int
+  $order: String
+  $sort: String
+) {
+  launchesPast(
+    find: $find
+    limit: $limit
+    order: $order
+    sort: $sort
+    offset: $offset
+  ) {
+    id
+    mission_name
+    launch_date_local
+    launch_site {
+      site_name_long
+    }
+    launch_success
+    links {
+      wikipedia
+    }
+    ...LaunchRocket
+    ...Ship
+  }
+}

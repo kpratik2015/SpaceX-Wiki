@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    @apply min-h-full leading-none cursor-default;
+  }
+  body {
+    @apply text-base antialiased;
+  }
+  html,
+  body {
+    @apply flex flex-1 flex-col;
+  }
+}

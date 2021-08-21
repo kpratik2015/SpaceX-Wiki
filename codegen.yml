@@ -8,8 +8,13 @@ generates:
       - "typescript-operations"
       - "typescript-react-query"
     config:
+      exposeQueryKeys: true
+      exposeFetcher: true
       fetcher:
         endpoint: "https://api.spacex.land/graphql/"
+        fetchParams:
+          headers:
+            Content-Type: application/json
   ./graphql.schema.json:
     plugins:
       - "introspection"

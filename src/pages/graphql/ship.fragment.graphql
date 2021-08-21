@@ -1,0 +1,8 @@
+fragment Ship on Launch {
+  ships {
+    id
+    name
+    home_port
+    image
+  }
+}
